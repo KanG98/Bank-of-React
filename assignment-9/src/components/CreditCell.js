@@ -6,25 +6,16 @@ class CreditCell extends Component {
         super(props)
     }
 
-  render() {
-    return (
-        <div style={{display: "block"}}>
-            <p>
-                Amount: {this.props.credit['amount']}
-            </p>
-            <p>
-                Date: {this.props.credit['date']}
-            </p>
-            <p>
-                Description: {this.props.credit['description']}
-            </p>
-            <p>
-                Id: {this.props.credit['id']}
-            </p>
-            <br></br>
-        </div>
-    );
-  }
+    render() {
+        return (
+            <tr className='tableRow'>
+                <td>{this.props.credit['amount']}</td>
+                <td>{this.props.credit['date']}</td>
+                <td>{this.props.credit['description']}</td>
+                <td>{this.props.credit['id']}</td>
+            </tr>
+        );
+      }
 }
 
 export default CreditCell;

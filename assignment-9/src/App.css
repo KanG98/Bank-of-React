@@ -12,6 +12,14 @@ nav{
 
 }
 
+.credit-nav {
+  display: flex;
+  padding-left: 10%;
+  align-items: center;
+  margin-bottom: -50px;
+  background-color: #004f0c;
+}
+
 .title{
   font-size: 30px;
   letter-spacing: 0.01em;
@@ -45,6 +53,15 @@ table > tr > th {
   padding-left: 8px;
 }
 
+.table-credit{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  background-color: rgb(191, 247, 193);
+  padding: 4px;
+  padding-left: 8px;
+}
+
 .tableRow{
   font-size: 22px;
   border: 1px solid #dddddd;
@@ -61,6 +78,16 @@ table > tr > th {
   height: 50px;
   font-size: 22px;
   background-color: rgb(24, 100, 193);
+  color: white;
+  padding-top: 18px;
+  padding-left: 10%;
+  font-weight: 300;
+}
+
+#account-balance-credit{
+  height: 50px;
+  font-size: 22px;
+  background-color: #007111;
   color: white;
   padding-top: 18px;
   padding-left: 10%;

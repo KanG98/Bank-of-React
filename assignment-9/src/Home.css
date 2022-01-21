@@ -1,0 +1,37 @@
+.home-container {
+    width: 70%;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: auto;
+  }
+  
+  .title-home {
+    background-color: rgb(0, 4, 135);
+    color: white;
+    font-size: 50px;
+    padding: 40px;
+    margin: auto;
+  }
+  
+  .route-link {
+    background-color: black;
+    padding: 30px;
+  }
+  
+  .route-link a {
+    text-decoration: none;
+    margin-right: 15px;
+    color: #f4f4f4;
+    background-color: #787777;
+    padding: 10px;
+    border: 1px solid #333333;
+    border-radius: 7px;
+  }
+  
+  /* .route a:visited {
+    color: white;
+  } */
+
+  .balance {
+    font-size: 40px;
+  }
