@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from './components/Login';
+import Debits from './components/Debits'
 
 class App extends Component {
 
@@ -60,6 +61,12 @@ class App extends Component {
     this.setState({currentUser: newUser})
   }
 
+  addDebit = (newDebit) =>{
+    this.setState({debits: [...this.state.debits, ...newDebit]}, () =>{
+      this.updateAccountBalance()
+    })
+  }
+
 
   render() {
 
@@ -68,6 +75,7 @@ class App extends Component {
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
   );
     const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
+    const DebitsComponent = () => (<Debits debitBills={this.state.debits} accountBalance={this.state.accountBalance} addDebit={this.addDebit} {...this.props}/>)
 
     return (
       <Router>
@@ -76,6 +84,7 @@ class App extends Component {
             <Route exact path="/" element={<HomeComponent/>} />
             <Route exact path="/userProfile" element={<UserProfileComponent/>}/>
             <Route exact path="/login" element={<LogInComponent/>}/>
+            <Route exact path="/debits" element={<DebitsComponent/>}/>
           </Routes>
         </div>
       </Router>
