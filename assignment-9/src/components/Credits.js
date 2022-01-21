@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import DebitCell from './DebitCell'
+import CreditCell from './CreditCell'
 
-class Debits extends Component {
+class Credits extends Component {
 
     constructor(props){
         super(props)
@@ -24,7 +24,7 @@ class Debits extends Component {
 
     handleSubmit(e){
         e.preventDefault()
-        this.props.addDebit([this.state.newTrans])
+        this.props.addCredit([this.state.newTrans])
     }
 
     handleChange(e){
@@ -37,10 +37,10 @@ class Debits extends Component {
         return (
             <div>
                 <center>
-                    <h1>Debits</h1>
+                    <h1>Credits</h1>
 
                     <Link to="/">Home</Link>
-                    {this.props.debitBills.map((d) => <DebitCell key={d['id']} debit={d}/>)}
+                    {this.props.creditBills.map((d) => <CreditCell key={d['id']} credit={d}/>)}
                     <p>Account Balance: {this.props.accountBalance}</p>
 
 
@@ -62,11 +62,11 @@ class Debits extends Component {
                             <label>Id</label>
                             <input type="text" name="id" onChange={this.handleChange}/>
                         </div>
-                        <button >Add Debit</button>
+                        <button >Add Credit</button>
                 </form>
             </div>
         );
     }
 }
 
-export default Debits;
+export default Credits;

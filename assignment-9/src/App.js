@@ -4,6 +4,7 @@ import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import LogIn from './components/Login';
 import Debits from './components/Debits'
+import Credits from './components/Credits';
 
 class App extends Component {
 
@@ -67,15 +68,31 @@ class App extends Component {
     })
   }
 
+  addCredit = (newCredit) =>{
+    this.setState({credits: [...this.state.credits, ...newCredit]}, () =>{
+      this.updateAccountBalance()
+    })
+  }
+
 
   render() {
 
     const HomeComponent = () => (<Home accountBalance={this.state.accountBalance} />);
+
     const UserProfileComponent = () => (
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince}  />
-  );
-    const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>)
-    const DebitsComponent = () => (<Debits debitBills={this.state.debits} accountBalance={this.state.accountBalance} addDebit={this.addDebit} {...this.props}/>)
+    );
+
+    const LogInComponent = () => (<LogIn user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props}/>);
+
+    const DebitsComponent = () => (
+    <Debits debitBills={this.state.debits} accountBalance={this.state.accountBalance} addDebit={this.addDebit} {...this.props}/>
+    );
+    
+    const CreditsComponent = () => (
+    <Credits creditBills={this.state.credits} accountBalance={this.state.accountBalance} addCredit={this.addCredit} {...this.props}/>
+    );
+
 
     return (
       <Router>
@@ -85,6 +102,7 @@ class App extends Component {
             <Route exact path="/userProfile" element={<UserProfileComponent/>}/>
             <Route exact path="/login" element={<LogInComponent/>}/>
             <Route exact path="/debits" element={<DebitsComponent/>}/>
+            <Route exact path="/credits" element={<CreditsComponent/>}/>
           </Routes>
         </div>
       </Router>
