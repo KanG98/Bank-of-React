@@ -51,7 +51,7 @@ class App extends Component {
     let creditTotal = 0
     this.state.debits.map((trans) => debitTotal += trans["amount"] )
     this.state.credits.map((trans) => creditTotal += trans["amount"] )
-    this.setState({accountBalance: Math.round((debitTotal-creditTotal) * 100) / 100})
+    this.setState({accountBalance: Math.round((creditTotal-debitTotal) * 100) / 100})
   }
 
   mockLogIn = (logInInfo) => {
@@ -78,7 +78,6 @@ class App extends Component {
             <Route exact path="/login" element={<LogInComponent/>}/>
           </Routes>
         </div>
-        <button onClick={this.setState({credits: [...this.state.credits, {'amount': 100}]})}> add credit card</button>
       </Router>
     );
   }
