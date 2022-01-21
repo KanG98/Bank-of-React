@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 class LogIn extends Component {
   constructor () {
@@ -9,7 +9,7 @@ class LogIn extends Component {
         userName: '',
         password: ''
       },
-      isUserAuthenticated: true
+      isUserAuthenticated: false
     }
   }
 
@@ -29,8 +29,8 @@ class LogIn extends Component {
   }
 
   render () {
-    if (this.state.redirect) {
-      return (<Redirect to="/userProfile"/>)
+    if (this.state.isUserAuthenticated) {
+      return (<Navigate replace to="/userProfile"/>)
     }
 
     return (

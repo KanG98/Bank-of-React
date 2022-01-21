@@ -16,6 +16,7 @@ class App extends Component {
         memberSince: '08/23/99',
       }
     }
+
   }
 
   mockLogIn = (logInInfo) => {
