@@ -11,6 +11,7 @@ class LogIn extends Component {
       },
       isUserAuthenticated: false
     }
+
   }
 
   handleChange = (e) => {

@@ -14,9 +14,44 @@ class App extends Component {
       currentUser: {
         userName: 'bob_loblaw',
         memberSince: '08/23/99',
-      }
+      },
+      debits:[],
+      credits: []
     }
+  }
 
+  componentDidMount(){
+    this.getDebits()
+    this.getCredits()
+    this.updateAccountBalance()
+  }
+
+  getDebits = async () => {
+    const res = await fetch("https://moj-api.herokuapp.com/debits")
+                .then((res) => res.json())
+                .then(res => {
+                  this.setState({debits: res}, () =>{
+                    this.updateAccountBalance()
+                  })
+                })
+  }
+
+  getCredits = async () => {
+    const res = await fetch("https://moj-api.herokuapp.com/credits")
+                .then((res) => res.json())
+                .then(res => {
+                  this.setState({credits: res}, () =>{
+                    this.updateAccountBalance()
+                  })
+                })
+  }
+
+  updateAccountBalance = () => {
+    let debitTotal = 0
+    let creditTotal = 0
+    this.state.debits.map((trans) => debitTotal += trans["amount"] )
+    this.state.credits.map((trans) => creditTotal += trans["amount"] )
+    this.setState({accountBalance: Math.round((debitTotal-creditTotal) * 100) / 100})
   }
 
   mockLogIn = (logInInfo) => {
@@ -43,6 +78,7 @@ class App extends Component {
             <Route exact path="/login" element={<LogInComponent/>}/>
           </Routes>
         </div>
+        <button onClick={this.setState({credits: [...this.state.credits, {'amount': 100}]})}> add credit card</button>
       </Router>
     );
   }
