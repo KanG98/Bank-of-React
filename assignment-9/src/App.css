@@ -1,38 +1,98 @@
 .App {
   text-align: center;
 }
+/* Nav Bar */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav{
   display: flex;
-  flex-direction: column;
+  padding-left: 10%;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: -50px;
+  background-color: #1d4e89;
+
+}
+
+.title{
+  font-size: 30px;
+  letter-spacing: 0.01em;
+  padding-top: 30px;
+  color: white;
+  font-weight: 400;
+}
+
+.link-to-home{
+  font-size: 20px;
+  margin-left: 50px;
+  padding-top: 35px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* Table */
+
+table{
+  font-size: 20px;
+  margin: 0 auto;
+  margin-top: 50px;
+  width: 80%;
+  border-collapse: collapse;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+table > tr > th {
+  margin-left: 0;
+  text-align: left;
+  background-color: rgb(191, 220, 247);
+  padding: 4px;
+  padding-left: 8px;
+}
+
+.tableRow{
+  font-size: 22px;
+  border: 1px solid #dddddd;
+}
+
+.tableRow > td, .tableRow > th{
+  font-size: 18px;
+  border: 1px solid #dddddd;
+  padding: 4px;
+  padding-left: 8px;
+}
+
+#account-balance{
+  height: 50px;
+  font-size: 22px;
+  background-color: rgb(24, 100, 193);
+  color: white;
+  padding-top: 18px;
+  padding-left: 10%;
+  font-weight: 300;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f0f0;
+}
+
+
+/* Form */
+
+
+form{
+  margin: 0 auto;
+  display: flex;
+  width: 80%;
+  margin-top: 30px;
+}
+
+form > div > label{
+  margin-left: 50px;
+  margin-right: 10px;
+}
+
+.add-debit-btn{
+  margin-left: 60px;
+  width: 100px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin-right: auto;
 }
