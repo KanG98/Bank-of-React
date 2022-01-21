@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "./../App.css"
 
 class DebitCell extends Component {
     constructor(props){
@@ -7,21 +8,12 @@ class DebitCell extends Component {
 
   render() {
     return (
-        <div style={{display: "block"}}>
-            <p>
-                Amount: {this.props.debit['amount']}
-            </p>
-            <p>
-                Date: {this.props.debit['date']}
-            </p>
-            <p>
-                Description: {this.props.debit['description']}
-            </p>
-            <p>
-                Id: {this.props.debit['id']}
-            </p>
-            <br></br>
-        </div>
+        <tr className='tableRow'>
+            <td>{this.props.debit['amount']}</td>
+            <td>{this.props.debit['date']}</td>
+            <td>{this.props.debit['description']}</td>
+            <td>{this.props.debit['id']}</td>
+        </tr>
     );
   }
 }

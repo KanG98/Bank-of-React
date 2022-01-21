@@ -32,6 +32,7 @@ class App extends Component {
     const res = await fetch("https://moj-api.herokuapp.com/debits")
                 .then((res) => res.json())
                 .then(res => {
+                  res.map((res) =>{res['date'] = res['date'].substring(0, 10)})
                   this.setState({debits: res}, () =>{
                     this.updateAccountBalance()
                   })
@@ -42,6 +43,7 @@ class App extends Component {
     const res = await fetch("https://moj-api.herokuapp.com/credits")
                 .then((res) => res.json())
                 .then(res => {
+                  res.map((res) =>{res['date'] = res['date'].substring(0, 10)})
                   this.setState({credits: res}, () =>{
                     this.updateAccountBalance()
                   })
