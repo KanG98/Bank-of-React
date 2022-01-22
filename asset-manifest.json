@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/Bank-of-React/static/css/main.3dae2485.css",
-    "main.js": "/Bank-of-React/static/js/main.c5914568.js",
-    "static/media/Bank-PNG-File.png": "/Bank-of-React/static/media/Bank-PNG-File.ea3996094d22b58fcbb0.png",
-    "index.html": "/Bank-of-React/index.html",
-    "main.3dae2485.css.map": "/Bank-of-React/static/css/main.3dae2485.css.map",
-    "main.c5914568.js.map": "/Bank-of-React/static/js/main.c5914568.js.map"
+    "main.css": "/Bank-of-React/assignment-9/static/css/main.3dae2485.css",
+    "main.js": "/Bank-of-React/assignment-9/static/js/main.0d5455c0.js",
+    "static/media/Bank-PNG-File.png": "/Bank-of-React/assignment-9/static/media/Bank-PNG-File.ea3996094d22b58fcbb0.png",
+    "index.html": "/Bank-of-React/assignment-9/index.html",
+    "main.3dae2485.css.map": "/Bank-of-React/assignment-9/static/css/main.3dae2485.css.map",
+    "main.0d5455c0.js.map": "/Bank-of-React/assignment-9/static/js/main.0d5455c0.js.map"
   },
   "entrypoints": [
     "static/css/main.3dae2485.css",
-    "static/js/main.c5914568.js"
+    "static/js/main.0d5455c0.js"
   ]
 }
